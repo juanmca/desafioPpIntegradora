@@ -1,0 +1,66 @@
+
+
+
+
+[
+    {
+         "id": 2,
+         "title": "Musculosa4",
+         "description": "Sixers",
+         "price": 10.99,
+         "thumbnails": [
+              "thumbnails.jpg"
+         ],
+         "code": "P002",
+         "stock": 10,
+         "category": "Musculosas",
+         "status": true
+    },
+    {
+         "id": 3,
+         "title": "Short2",
+         "description": "Lakers",
+         "price": 29.99,
+         "thumbnails": [
+              "thumbnails.jpg"
+         ],
+         "code": "P003",
+         "stock": 20,
+         "category": "Shorts",
+         "status": true
+    },
+    {
+         "id": 4,
+         "title": "Musculosa1",
+         "description": "Chicago Bulls",
+         "price": 10.99,
+         "thumbnails": [
+              "thumbnails.jpg"
+         ],
+         "code": "P004",
+         "stock": 10,
+         "category": "Musculosas",
+         "status": true
+    },
+    {
+         "id": 5,
+         "title": "Nuevo Producto",
+         "description": "Descripción del nuevo producto",
+         "price": 19.99,
+         "thumbnails": [
+              "thumbnail.jpg"
+         ],
+         "code": "P005",
+         "stock": 5,
+         "category": "Nueva Categoría",
+         "status": true
+    }
+]
+
+
+
+
+
+
+
+

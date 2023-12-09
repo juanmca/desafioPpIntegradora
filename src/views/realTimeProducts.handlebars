@@ -1,0 +1,35 @@
+<a href="/"><h3>Home</h3></a>
+<br />
+<a href="/chat"><h3>Chat</h3></a>
+<br />
+<h1>Real Time Products</h1>
+<hr>
+<div id="productosContainer"></div>
+<h2>Agregar Producto</h2>
+<form id="productForm" action="/realtimeproducts" method="post">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required />
+
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" required></textarea>
+
+  <label for="price">Price:</label>
+  <input type="number" id="price" name="price" step="0.01" required />
+
+  <label for="code">Code:</label>
+  <input type="text" id="code" name="code" required />
+
+  <label for="stock">Stock:</label>
+  <input type="number" id="stock" name="stock" required />
+
+  <label for="category">Category:</label>
+  <input type="text" id="category" name="category" required />
+
+  <label for="thumbnails">Thumbnails (comma-separated):</label>
+  <input type="text" id="thumbnails" name="thumbnails" />
+
+  <button type="submit">Agregar Producto</button>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/realTimeProducts.js"></script>

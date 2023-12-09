@@ -33,27 +33,27 @@ app.use('/chat', chatRouter);
 app.use('/realtimeproducts', realTimeProductRouter);
 
 app.use((req, res) => {
-    res.status(404).json({ message: 'Página no encontrada' });
+    res.status(404).json({ message: 'Page not found' });
 });
 
 const server = app.listen(port, () => {
-    console.log(`Servidor encendido y escuchando el puerto ${port}`);
+    console.log(`Server on y escuchando el puerto ${port}`);
 });
 
-// Conexión MongoDB
+//  MongoDB  ///
 try {
-    await mongoose.connect('', { dbName: 'ecommerce' })
-    console.log('DataBase Online!')
+    await mongoose.connect('mongodb+srv://manuel1984jc:cfsd3089@cluster0.urbzwvn.mongodb.net', { dbName: 'Ecommerce' })
+    console.log('DB en linea!')
 } catch (error) {
     console.log(error.message)
 }
 
-// Conexión Socket.io/Chat
+//  Socket.io/Chat ////
 const io = new Server(server);
 app.set('io', io);
 
 io.on('connection', async (socket) => {
-    console.log('Un usuario se ha conectado');
+    console.log('Un usuario se conecto al socket');
 
     socket.on('setUserName', (userInfo) => {
         socket.userName = userInfo.userName;
@@ -69,7 +69,7 @@ io.on('connection', async (socket) => {
         const chatHistory = await messageModel.find().sort({ timestamp: 1 });
         socket.emit('chatHistory', chatHistory);
     } catch (error) {
-        console.error('Error al obtener productos o historial de chat:', error.message);
+        console.error('Error para obtener productos o historial de chat:', error.message);
     }
 
     socket.on('sendMessage', async (message) => {
@@ -89,7 +89,7 @@ io.on('connection', async (socket) => {
     socket.on('disconnect', () => {
         if (socket.userName) {
             io.emit('userDisconnected', socket.userName);
-            console.log(`${socket.userName} se ha desconectado`);
+            console.log(`${socket.userName} se desconecto`);
         }
     });
-});
+}); 

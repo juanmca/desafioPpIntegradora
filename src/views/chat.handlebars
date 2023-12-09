@@ -1,0 +1,22 @@
+<h1>CHAT</h1>
+
+<a href="/"><h3>Home</h3></a> <br>
+<a href="/realtimeproducts"><h3>RealTimeProducts</h3></a> <br><br>
+
+<div id="userNameForm">
+    <input type="text" id="userNameInput" placeholder="Ingrese su nombre..." />
+    <input type="text" id="userEmailInput" placeholder="Ingrese su correo..." />
+    <button onclick="setUserName()">Unirse al chat</button>
+</div>
+
+<div id="chatContainer" style="display: none;">
+    <div id="chatBox" class="chatBox">
+    </div>
+    <div id="messageForm">
+        <input type="text" id="messageInput" placeholder="Escribe un mensaje..." />
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/chatScripts.js"></script>

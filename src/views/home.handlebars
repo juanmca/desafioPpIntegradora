@@ -1,0 +1,20 @@
+<nav><a href="/realtimeproducts"><h3>RealTimeProducts</h3></a> <br>
+ <a href="/chat"><h3>Chat</h3></a> </nav>
+
+ <hr>
+
+<h1>Products</h1> 
+
+<br> 
+
+
+<div id="productosContainerHome">
+  {{#each products}}
+  <div class="productCard">
+      <h2>{{this.title}}</h2>
+      <p>Price: ${{this.price}}</p> 
+      <p>Stock: {{this.stock}}</p>
+      <p>{{this.description}}</p>
+  </div>
+  {{/each}}
+</div>
