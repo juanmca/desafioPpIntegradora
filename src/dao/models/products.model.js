@@ -65,7 +65,7 @@ class ProductManager {
         return { error: "El ID del producto no es válido.", status: 400 };
       }
 
-      const product = await Product.findOne({ _id: id });
+      const product = await Product.findOne({ _id: id, status: true });
       if (!product) {
         return { error: "Producto no encontrado.", status: 404 };
       }
